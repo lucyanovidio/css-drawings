@@ -7,7 +7,7 @@ Alguns desenhos feitos com CSS para praticar conceitos da tecnologia.
 <table>
   <th colspan="2">Desenhos</th>
   <tr>
-    <td>1. <a href="https://github.com/lucyanovidio/css-drawings/birthday-cake">Birthday Cake</a></td>
+    <td>1. <a href="https://github.com/lucyanovidio/css-drawings/tree/main/birthday-cake">Birthday Cake</a></td>
     <td></td>
   </tr>
   <tr>
