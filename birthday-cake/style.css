@@ -1,0 +1,376 @@
+/* GLOBAL */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: linear-gradient(
+    to bottom,
+    #9578b9 60%,
+    #fff 100%
+  ); /* o % fala da posição, não do quanto a cor vai ocupar a tela. Então o rosa vai até a posição 60% da tela, e o branco vai até a posição 100% */
+  --pink-light: #ed5fec;
+  --pink-dark: #9d31a5;
+  --green-light: #4ff7c5;
+  --green-dark: #1f6355;
+  --yelow-light: #e8e889;
+  --yelow-dark: #f8d639;
+  --star-outline-dark: #7c4334;
+  --star-outline-light: #df6526;
+  --white: #fff;
+
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+
+  display: grid;
+  place-content: center;
+
+  background: var(--bg-color);
+
+  font-size: 1.6rem;
+}
+
+.container {
+  width: 18rem;
+  height: 24rem;
+
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+}
+
+/* BASE */
+
+.container::after {
+  content: "";
+  display: block;
+
+  width: 9rem;
+  height: 3rem;
+
+  position: absolute;
+  bottom: 0;
+
+  background-color: var(--green-light);
+  border-radius: 50%;
+  outline: 0.3rem solid var(--green-dark);
+
+  transform: translateY(0.6rem);
+}
+
+.base {
+  width: 9.5rem;
+  height: 15rem;
+
+  background-color: var(--green-light);
+
+  border-right: 0.3rem solid var(--green-dark);
+  border-left: 0.3rem solid var(--green-dark);
+  border-radius: 5rem 5rem 0 0;
+
+  position: absolute;
+  bottom: 1rem;
+  z-index: 1;
+}
+
+.line {
+  width: 0.2rem;
+  height: 12rem;
+
+  background-color: var(--green-dark);
+
+  position: absolute;
+}
+
+.line:nth-child(1) {
+  transform: translate(1rem, 4.3rem) rotate(-3deg);
+}
+
+.line:nth-child(2) {
+  transform: translate(3rem, 4.6rem) rotate(2deg);
+}
+
+.line:nth-child(3) {
+  width: 0.25rem;
+  transform: translate(4.5rem, 4.7rem);
+}
+
+.line:nth-child(4) {
+  transform: translate(6.5rem, 4.6rem) rotate(3.5deg);
+}
+
+.line:nth-child(5) {
+  transform: translate(7.7rem, 4.2rem) rotate(-1deg);
+}
+
+/* CAKE */
+
+.cake {
+  width: 100%;
+  height: 7rem;
+
+  position: absolute;
+  z-index: 20;
+
+  transform: translateY(8rem);
+}
+
+.cake-top {
+  width: 100%;
+  height: 6rem;
+
+  position: absolute;
+  top: 0;
+  z-index: 3;
+
+  background-color: var(--pink-light);
+
+  border-top: 0.3rem solid var(--pink-dark);
+  border-left: 0.3rem solid var(--pink-dark);
+  border-right: 0.3rem solid var(--pink-dark);
+  border-radius: 10rem 10rem 0 0;
+}
+
+.cake-hole:nth-child(3) {
+  content: "";
+  display: block;
+
+  width: 3rem;
+  height: 3rem;
+
+  position: absolute;
+  z-index: 30;
+  left: 6rem;
+  top: 11.2rem;
+
+  background-color: var(--pink-light);
+  border-top: 0.4rem solid var(--pink-dark);
+  border-radius: 50%;
+
+  transform: rotate(20deg);
+}
+
+.cake-hole:nth-child(2) {
+  content: "";
+  display: block;
+
+  width: 3rem;
+  height: 2rem;
+
+  position: absolute;
+  z-index: 30;
+  left: 8.5rem;
+  top: 11.5rem;
+
+  background-color: var(--pink-light);
+  border-top: 0.4rem solid var(--pink-dark);
+  border-radius: 5rem 5rem 0 0;
+
+  transform: rotate(-20deg);
+}
+
+.cake-middle {
+  width: 90%;
+  height: 5rem;
+
+  background-color: var(--pink-light);
+  border-radius: 999.9rem;
+
+  position: absolute;
+  top: 3.2rem;
+  left: 0.5rem;
+  z-index: 3;
+
+  transform: rotate(2deg);
+}
+
+.cake-base {
+  width: 6.7rem;
+  height: 7rem;
+
+  position: absolute;
+  top: 2.5rem;
+  z-index: 2;
+
+  background-color: var(--pink-light);
+  border-radius: 50%;
+  outline: 0.3rem solid var(--pink-dark);
+}
+
+.base-1 {
+  transform: translateY(-0.1rem);
+  left: 0.3rem;
+}
+
+.base-2 {
+  transform: translate(6rem, 0.5rem);
+}
+
+.base-3 {
+  transform: translate(11.12rem, -0.3rem);
+}
+
+.star {
+  width: 0;
+  height: 0;
+
+  margin-bottom: 2rem;
+
+  border-left: 1.5rem solid transparent;
+  border-right: 1.5rem solid transparent;
+  border-bottom: 1rem solid var(--yelow-dark);
+
+  transform: rotate(35deg);
+
+  position: absolute;
+  z-index: 30;
+}
+
+.star::before {
+  content: "";
+  display: block;
+
+  width: 0;
+  height: 0;
+
+  position: absolute;
+  top: -0.8rem;
+  left: -1rem;
+
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-bottom: 1.5rem solid var(--yelow-dark);
+
+  transform: rotate(-35deg);
+}
+
+.star::after {
+  content: "";
+  display: block;
+
+  width: 0;
+  height: 0;
+
+  position: absolute;
+  top: 0;
+  left: -1.6rem;
+
+  border-left: 1.5rem solid transparent;
+  border-right: 1.5rem solid transparent;
+  border-bottom: 1rem solid var(--yelow-dark);
+
+  transform: rotate(-70deg);
+}
+
+.star:nth-child(1) {
+  transform: translate(14rem, 5rem);
+}
+.star:nth-child(2) {
+  transform: translate(11rem, 2.3rem);
+}
+.star:nth-child(3) {
+  transform: translate(8rem, 6.5rem);
+}
+.star:nth-child(4) {
+  transform: translate(4.5rem, 3rem);
+}
+.star:nth-child(5) {
+  transform: translate(1.5rem, 5rem);
+}
+
+/* CANDLE */
+
+.candle .body {
+  width: 2rem;
+  height: 9rem;
+
+  position: absolute;
+  left: 8rem;
+  top: 3.5rem;
+  z-index: 25;
+
+  background-color: var(--white);
+  border: .3rem solid var(--green-dark);
+}
+
+.candle-line {
+  width: 100%;
+  height: 1.7rem;
+
+  background-color: var(--green-dark);
+}
+
+.candle-line:nth-child(1) {
+  transform: translateY(2rem);
+}
+
+.candle-line:nth-child(2) {
+  transform: translateY(3.5rem);
+}
+
+.candle::before {
+  content: '';
+  display: block;
+
+  width: 1.7rem;
+  height: .8rem;
+
+  position: absolute;
+  top: 3.55rem;
+  left: 8.01rem;
+  z-index: 30;
+
+  background-color: var(--white);
+  border: .2rem solid var(--green-dark);
+  border-radius: 0 0 15rem 9rem;
+}
+
+.candle .star {
+  position: absolute;
+  left: 7.7rem;
+  top: 1rem;
+  transform: rotate(35deg);
+}
+
+.candle .star-base {
+  width: 2.5rem;
+  height: .25rem;
+
+  background-color: var(--white);
+
+  position: absolute;
+  top: 1.5rem;
+  left: -.65rem;
+
+  transform: rotate(55deg);
+}
+
+.candle .star .shadow {
+  width: 1rem;
+  height: 1rem;
+
+  box-shadow: 0 0 3rem 1.1rem var(--star-outline-light);
+  border-radius: 50%;
+
+  position: absolute;
+  left: -.6rem;
+  z-index: -100;
+}
+
+.container-shadow {
+  width: 8rem;
+  height: 8rem;
+
+  box-shadow: 0 0 7rem 4rem var(--yelow-light);
+  border-radius: 50%;
+
+  position: absolute;
+  top: 12rem;
+}
